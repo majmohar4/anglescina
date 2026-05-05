@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angleščina SM · Pola 1 OR · Učna stran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --ink2: #2d2d4a;
+  --paper: #f5f0e8;
+  --paper2: #ede8dc;
+  --paper3: #e4ddd0;
+  --rule: #c8bfaa;
+  --accent: #c0392b;
+  --accent2: #1a6b8a;
+  --accent3: #1a7a4a;
+  --gold: #b8860b;
+  --mono: 'JetBrains Mono', monospace;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --display: 'Playfair Display', Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ─── MASTHEAD ─────────────────────────────────────────── */
+.masthead {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.masthead::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 39px, rgba(255,255,255,.04) 40px
+  );
+  pointer-events: none;
+}
+.masthead-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: .8rem;
+}
+.masthead h1 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+.masthead h1 span { color: #e8c070; }
+.masthead-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  color: #aaa;
+  font-size: 1rem;
+  margin-top: .6rem;
+}
+.masthead-stats {
+  display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #333;
+}
+.mstat { text-align: center; }
+.mstat-n { font-family: var(--display); font-size: 1.8rem; color: #e8c070; }
+.mstat-l { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: #666; margin-top: .1rem; }
+
+/* ─── NAV ──────────────────────────────────────────────── */
+.sitenav {
+  background: var(--ink2);
+  display: flex; gap: 0; overflow-x: auto;
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 2px solid #e8c070;
+}
+.sitenav a {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #999;
+  text-decoration: none;
+  padding: .75rem 1.2rem;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+  border-right: 1px solid #333;
+}
+.sitenav a:hover, .sitenav a.on { color: #e8c070; background: rgba(232,192,112,.08); }
+
+/* ─── LAYOUT ───────────────────────────────────────────── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+.section:last-child { border-bottom: none; }
+
+/* Section header */
+.sec-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
+.sec-num {
+  font-family: var(--display);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--rule);
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+}
+.sec-title { font-family: var(--display); font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
+.sec-title em { font-style: italic; color: var(--accent2); }
+
+/* ─── INTRO / STRATEGY BOX ────────────────────────────── */
+.strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 2px; margin: 1.5rem 0; overflow: hidden; }
+@media(max-width:640px){ .strategy-grid { grid-template-columns: 1fr; } }
+.strat-cell { background: var(--paper); padding: 1.2rem 1.4rem; }
+.strat-cell h4 { font-family: var(--mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+.strat-cell p { font-size: .88rem; line-height: 1.6; color: var(--ink2); }
+
+.callout {
+  border-left: 4px solid var(--accent);
+  padding: .8rem 1.2rem;
+  background: rgba(192,57,43,.06);
+  margin: 1.5rem 0;
+  font-size: .9rem;
+}
+.callout strong { font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: .2rem; }
+
+.callout.blue { border-color: var(--accent2); background: rgba(26,107,138,.06); }
+.callout.blue strong { color: var(--accent2); }
+.callout.green { border-color: var(--accent3); background: rgba(26,122,74,.06); }
+.callout.green strong { color: var(--accent3); }
+.callout.gold { border-color: var(--gold); background: rgba(184,134,11,.06); }
+.callout.gold strong { color: var(--gold); }
+
+/* ─── WORD LISTS / CHIPS ───────────────────────────────── */
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: .8rem 0 1.2rem; }
+.chip {
+  font-family: var(--mono);
+  font-size: .78rem;
+  padding: .2rem .6rem;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  cursor: default;
+}
+.chip-r  { color: var(--accent);  background: rgba(192,57,43,.07); }
+.chip-b  { color: var(--accent2); background: rgba(26,107,138,.07); }
+.chip-g  { color: var(--accent3); background: rgba(26,122,74,.07); }
+.chip-k  { color: var(--gold);    background: rgba(184,134,11,.07); }
+.chip-ink{ color: var(--ink2);    background: rgba(0,0,0,.05); }
+
+.freq { font-family: var(--mono); font-size: .6rem; opacity: .5; margin-left: .1rem; vertical-align: super; }
+
+/* ─── VERB TENSE TABLE ─────────────────────────────────── */
+.tense-section { margin: 2rem 0; }
+.tense-section h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: .3rem;
+  margin-bottom: 1rem;
+}
+.tense-section h3 .badge {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  padding: .1rem .4rem;
+  border-radius: 2px;
+  margin-left: .5rem;
+}
+
+/* Formula box */
+.formula {
+  background: var(--ink);
+  color: #e8c070;
+  font-family: var(--mono);
+  font-size: .82rem;
+  padding: .6rem 1rem;
+  border-radius: 2px;
+  margin: .6rem 0;
+  letter-spacing: .02em;
+}
+.formula .dim { color: #666; }
+.formula .kw  { color: #80dfaa; }
+.formula .ph  { color: #f0a0a0; font-style: italic; }
+
+/* Example sentences */
+.examples { margin: .8rem 0; }
+.ex {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .3rem 1rem;
+  margin: .4rem 0;
+  font-size: .88rem;
+  align-items: baseline;
+}
+.ex-q { font-family: var(--mono); font-size: .65rem; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.ex-s { font-style: italic; color: var(--ink2); }
+.ex-s b { color: var(--accent); font-style: normal; font-family: var(--mono); }
+
+/* Signal words */
+.signal-table { width: 100%; border-collapse: collapse; margin: .8rem 0; font-size: .86rem; }
+.signal-table th { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink2); padding: .4rem .7rem; background: var(--paper3); text-align: left; border: 1px solid var(--rule); }
+.signal-table td { padding: .35rem .7rem; border: 1px solid var(--rule); vertical-align: top; }
+.signal-table tr:nth-child(even) td { background: var(--paper2); }
+
+/* ─── WORD FORMATION ───────────────────────────────────── */
+.suffix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; margin: 1.2rem 0; }
+.suffix-cell { background: var(--paper); padding: 1rem; }
+.suffix-cell h4 { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--accent2); margin-bottom: .4rem; }
+.suffix-cell .examples { font-size: .82rem; color: var(--ink2); margin: 0; }
+
+/* ─── GAP FILL STRATEGY ────────────────────────────────── */
+.category-block { margin: 1.5rem 0; }
+.cat-label { font-family: var(--mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .4rem; }
+
+/* ─── SEARCH / FILTER (verb section) ──────────────────── */
+.filter-bar { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.2rem; }
+.filt-btn {
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .3rem .7rem;
+  border: 1px solid var(--rule);
+  background: var(--paper2);
+  color: var(--ink2);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all .12s;
+}
+.filt-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filt-btn.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.verb-cloud { display: flex; flex-wrap: wrap; gap: .4rem; padding: 1.2rem; background: var(--paper2); border: 1px solid var(--rule); border-radius: 2px; min-height: 80px; }
+
+/* ─── QUIZ BOX ─────────────────────────────────────────── */
+.quiz-box { background: var(--paper2); border: 1px solid var(--rule); border-radius: 2px; padding: 1.5rem; margin: 1.5rem 0; }
+.quiz-box h4 { font-family: var(--display); font-size: 1.1rem; margin-bottom: 1rem; }
+.q-item { display: flex; align-items: center; gap: .7rem; margin: .6rem 0; font-size: .9rem; flex-wrap: wrap; }
+.q-blank {
+  border: none;
+  border-bottom: 2px solid var(--ink2);
+  background: transparent;
+  font-family: var(--mono);
+  font-size: .88rem;
+  width: 120px;
+  padding: .1rem .3rem;
+  outline: none;
+  color: var(--accent);
+  text-align: center;
+  transition: border-color .15s;
+}
+.q-blank:focus { border-color: var(--accent2); }
+.q-blank.correct { border-color: var(--accent3); color: var(--accent3); }
+.q-blank.wrong   { border-color: var(--accent);  color: var(--accent); }
+.q-hint { font-family: var(--mono); font-size: .65rem; color: var(--gold); cursor: pointer; text-decoration: underline dotted; }
+.q-ans  { font-family: var(--mono); font-size: .75rem; color: var(--accent3); display: none; }
+.quiz-btn {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .45rem 1.2rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-top: .8rem;
+  transition: background .15s;
+}
+.quiz-btn:hover { background: var(--ink2); }
+
+/* ─── PROGRESS BAR ─────────────────────────────────────── */
+.progress-row { display: flex; gap: .4rem; align-items: center; margin: .4rem 0; }
+.progress-label { font-family: var(--mono); font-size: .68rem; width: 160px; flex-shrink: 0; color: var(--ink2); }
+.progress-bar-wrap { flex: 1; background: var(--paper3); height: 8px; border-radius: 2px; overflow: hidden; }
+.progress-bar { height: 100%; border-radius: 2px; transition: width .5s ease; }
+.progress-count { font-family: var(--mono); font-size: .65rem; color: var(--muted); width: 30px; text-align: right; flex-shrink: 0; color: var(--ink2); }
+
+/* ─── FOOTER ───────────────────────────────────────────── */
+footer { background: var(--ink); color: #555; font-family: var(--mono); font-size: .65rem; letter-spacing: .08em; text-align: center; padding: 1.5rem; margin-top: 2rem; }
+
+/* ─── MISC ─────────────────────────────────────────────── */
+p { margin-bottom: .8rem; }
+p:last-child { margin-bottom: 0; }
+h4.subhead { font-family: var(--mono); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); margin: 1.2rem 0 .4rem; }
+
+@media(max-width:640px){
+  .masthead { padding: 2rem 1rem 1.5rem; }
+  .sec-num { font-size: 2.5rem; }
+  .sec-title { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-label">Splošna matura · Angleščina · Izpitna pola 1 OR · 2004–2025</div>
+  <h1>Kako pisati<br><span>prvo polo mature</span></h1>
+  <p class="masthead-sub">Analiza 60 maturitetnih izpitov · Gap fill · Word formation · Glagolske oblike</p>
+  <div class="masthead-stats">
+    <div class="mstat"><div class="mstat-n">60</div><div class="mstat-l">Matur</div></div>
+    <div class="mstat"><div class="mstat-n">546</div><div class="mstat-l">Gap fill besed</div></div>
+    <div class="mstat"><div class="mstat-n">499</div><div class="mstat-l">Glagolskih oblik</div></div>
+    <div class="mstat"><div class="mstat-n">294</div><div class="mstat-l">WF besed</div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="sitenav">
+  <a href="#strategy">Strategija</a>
+  <a href="#gapfill">Gap Fill</a>
+  <a href="#verbs">Glagoli</a>
+  <a href="#wordform">Word Formation</a>
+  <a href="#besede">Vse besede</a>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- 1. STRATEGIJA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="section" id="strategy">
+  <div class="sec-header">
+    <span class="sec-num">1</span>
+    <h2 class="sec-title">Strategija za <em>pola 1 OR</em></h2>
+  </div>
+
+  <p>Pola 1 OR vsebuje tri dele: <strong>bralno razumevanje (A)</strong>, <strong>poznavanje in rabo jezika (B)</strong> in skupaj prinesejo 50 točk. Del B je tisti, ki ga je mogoče sistematično utrditi — vsebuje gap fill in word formation z vzorci, ki se ponavljajo vsako leto.</p>
+
+  <div class="strategy-grid">
+    <div class="strat-cell">
+      <h4>Razpored časa</h4>
+      <p>Del A (bralno razumevanje): ~25 min. Del B (gap fill + WF): ~20 min. Ostane ti 5 min za pregled. Ne zapravljaj časa pri eni nalogi.</p>
+    </div>
+    <div class="strat-cell">
+      <h4>Tehnika branja</h4>
+      <p>Najprej preberi celotno besedilo brez zaustavljanja. Potem zapolni, kar veš. Za preostale vrzeli — preberi stavek pred in za luknjo.</p>
+    </div>
+    <div class="strat-cell">
+      <h4>Ko ne veš odgovora</h4>
+      <p>Nikoli ne pusti prazno. Ugani glede na kontekst. Za gap fill: preposition/conjunction je pogosto varna stava. Za WF: poskusi suffix.</p>
+    </div>
+    <div class="strat-cell">
+      <h4>Pravopis</h4>
+      <p>Napačno napisane besede pri B delu <strong>ne odštejejo točk</strong>, ampak morajo biti pomensko pravilne. Boljše slabo napisano pravo besedo kot nič.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Ključna ugotovitev iz analize</strong>
+    Gap fill naloge testirajo pretežno <strong>prepositions, conjunctions, articles in relative pronouns</strong> — to so besede ki jih po navadi ne učiš posebej, a se jih da naučiti kot vzorce. Glagolske oblike testirajo <strong>perfect, passive in modal</strong> — tiste tri kombinacije pokrivajo večino napak dijakov.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- 2. GAP FILL -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="section" id="gapfill">
+  <div class="sec-header">
+    <span class="sec-num">2</span>
+    <h2 class="sec-title">Gap Fill — <em>vstavljanje besed</em></h2>
+  </div>
+
+  <p>Gap fill testira, ali razumeš kako angleška slovnica "teče" skozi stavek. Luknje so <strong>skoraj vedno</strong> ena od šestih kategorij spodaj. Ko prepoznaš kategorijo, je beseda logična — ne ugabaš, ampak razumeš.</p>
+
+  <!-- PREPOSITIONS -->
+  <div class="category-block">
+    <span class="cat-label">Kategorija 1 · najpogostejša</span>
+    <h3 style="font-family:var(--display);font-size:1.3rem;margin-bottom:.8rem;">Prepositions <span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">predlogi</span></h3>
+
+    <div class="callout gold">
+      <strong>Signali v stavku</strong>
+      Preposition sledi glagolu, pridevniku ali samostalniku. Pogosto tik pred <code>the</code>, imenom ali <code>-ing</code> obliko.
+    </div>
+
+    <div class="strategy-grid">
+      <div class="strat-cell">
+        <h4>Glagol + preposition (najpogosteje!)</h4>
+        <p style="font-size:.83rem">consist <b>of</b> · result <b>in</b> · depend <b>on</b> · refer <b>to</b> · contribute <b>to</b> · benefit <b>from</b> · suffer <b>from</b> · agree <b>with/on</b> · aim <b>at</b> · deal <b>with</b> · focus <b>on</b> · lead <b>to</b> · rely <b>on</b> · succeed <b>in</b></p>
+      </div>
+      <div class="strat-cell">
+        <h4>Adjective + preposition</h4>
+        <p style="font-size:.83rem">responsible <b>for</b> · interested <b>in</b> · famous <b>for</b> · similar <b>to</b> · different <b>from</b> · aware <b>of</b> · capable <b>of</b> · proud <b>of</b> · worried <b>about</b> · excited <b>about</b> · good <b>at</b> · used <b>to</b></p>
+      </div>
+    </div>
+
+    <h4 class="subhead">Najpogostejše prepositions iz maturitetnih nalog</h4>
+    <div class="chips" id="prepChips"></div>
+  </div>
+
+  <!-- CONJUNCTIONS / LINKERS -->
+  <div class="category-block">
+    <span class="cat-label">Kategorija 2</span>
+    <h3 style="font-family:var(--display);font-size:1.3rem;margin-bottom:.8rem;">Conjunctions & Linkers <span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">vezniki</span></h3>
+
+    <div class="callout blue">
+      <strong>Kako prepoznaš?</strong>
+      Luknja je med dvema stavkoma ali stavčnima deloma. Vprašaj se: ali je naslednji stavek <em>nasprotje</em>, <em>posledica</em>, <em>pogoj</em> ali <em>časovni odnos</em> prejšnjega?
+    </div>
+
+    <table class="signal-table">
+      <thead><tr><th>Pomen</th><th>Besede</th><th>Primer</th></tr></thead>
+      <tbody>
+        <tr><td><b>Nasprotje</b></td><td><div class="chips" style="margin:0"><span class="chip chip-r">but</span><span class="chip chip-r">although</span><span class="chip chip-r">though</span><span class="chip chip-r">while</span><span class="chip chip-r">whereas</span><span class="chip chip-r">however</span><span class="chip chip-r">yet</span></div></td><td style="font-size:.8rem;font-style:italic">He tried, <b>but</b> failed.</td></tr>
+        <tr><td><b>Vzrok/posledica</b></td><td><div class="chips" style="margin:0"><span class="chip chip-b">because</span><span class="chip chip-b">since</span><span class="chip chip-b">as</span><span class="chip chip-b">so</span><span class="chip chip-b">therefore</span></div></td><td style="font-size:.8rem;font-style:italic"><b>Since</b> it rained, we stayed.</td></tr>
+        <tr><td><b>Pogoj</b></td><td><div class="chips" style="margin:0"><span class="chip chip-g">if</span><span class="chip chip-g">unless</span><span class="chip chip-g">whether</span><span class="chip chip-g">provided</span></div></td><td style="font-size:.8rem;font-style:italic"><b>Unless</b> you study, you'll fail.</td></tr>
+        <tr><td><b>Čas</b></td><td><div class="chips" style="margin:0"><span class="chip chip-k">when</span><span class="chip chip-k">while</span><span class="chip chip-k">after</span><span class="chip chip-k">before</span><span class="chip chip-k">until</span><span class="chip chip-k">once</span><span class="chip chip-k">since</span></div></td><td style="font-size:.8rem;font-style:italic"><b>Once</b> he arrived, we left.</td></tr>
+        <tr><td><b>Dodajanje</b></td><td><div class="chips" style="margin:0"><span class="chip chip-ink">and</span><span class="chip chip-ink">also</span><span class="chip chip-ink">too</span><span class="chip chip-ink">as well as</span><span class="chip chip-ink">moreover</span></div></td><td style="font-size:.8rem;font-style:italic">She sang <b>and</b> danced.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RELATIVE PRONOUNS -->
+  <div class="category-block">
+    <span class="cat-label">Kategorija 3</span>
+    <h3 style="font-family:var(--display);font-size:1.3rem;margin-bottom:.8rem;">Relative Pronouns <span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">odnosni zaimki</span></h3>
+
+    <div class="callout green">
+      <strong>Triki za izbiro</strong>
+      <code>who</code> = oseba · <code>which</code> = stvar/žival · <code>that</code> = oseba ali stvar (ne v neomejevalnem stavku) · <code>whose</code> = posvojilni · <code>where</code> = kraj · <code>when</code> = čas · <code>whom</code> = oseba kot objekt (formalno)
+    </div>
+
+    <div class="examples">
+      <div class="ex"><span class="ex-q">WHO</span><span class="ex-s">The scientist <b>who</b> discovered penicillin won the Nobel Prize.</span></div>
+      <div class="ex"><span class="ex-q">WHICH</span><span class="ex-s">The report, <b>which</b> was published last year, caused controversy.</span></div>
+      <div class="ex"><span class="ex-q">WHOSE</span><span class="ex-s">The company <b>whose</b> profits fell last year is now recovering.</span></div>
+      <div class="ex"><span class="ex-q">WHERE</span><span class="ex-s">The village <b>where</b> she grew up no longer exists.</span></div>
+      <div class="ex"><span class="ex-q">WHOM</span><span class="ex-s">The author <b>whom</b> critics praised died in 1998.</span></div>
+    </div>
+
+    <div class="callout">
+      <strong>Pozor: which vs that</strong>
+      Z vejico pred ➜ <code>which</code> (nikoli <code>that</code>). Brez vejice ➜ obe sta pravilni, a <code>that</code> je pogostejša v govorjenem jeziku.
+    </div>
+  </div>
+
+  <!-- ARTICLES -->
+  <div class="category-block">
+    <span class="cat-label">Kategorija 4</span>
+    <h3 style="font-family:var(--display);font-size:1.3rem;margin-bottom:.8rem;">Articles & Determiners <span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">členi</span></h3>
+
+    <table class="signal-table">
+      <thead><tr><th>Člen</th><th>Kdaj</th><th>Primeri iz matur</th></tr></thead>
+      <tbody>
+        <tr><td class="mono"><b>a / an</b></td><td style="font-size:.83rem">Prvič omenjeno · ena od mnogih · pred glasovniškim samostalnikom (an + samoglasnik)</td><td style="font-size:.8rem;font-style:italic">She found <b>a</b> solution · <b>an</b> unusual approach</td></tr>
+        <tr><td class="mono"><b>the</b></td><td style="font-size:.83rem">Že omenjeno · edinstveno · pred superlativom · geografska imena (reke, gorovja, morja)</td><td style="font-size:.8rem;font-style:italic"><b>The</b> only option · <b>the</b> Amazon</td></tr>
+        <tr><td class="mono"><b>∅ (nič)</b></td><td style="font-size:.83rem">Množina splošno · abstraktni pojmi · jeziki · predmeti šolanja</td><td style="font-size:.8rem;font-style:italic"><b>∅</b> Children need love · studying <b>∅</b> English</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- OTHER COMMON -->
+  <div class="category-block">
+    <span class="cat-label">Kategorija 5 · pogoste</span>
+    <h3 style="font-family:var(--display);font-size:1.3rem;margin-bottom:.8rem;">Ostale pogoste besede iz matur</h3>
+
+    <div class="strategy-grid">
+      <div class="strat-cell">
+        <h4>Auxiliaries (pomožni glagoli)</h4>
+        <p style="font-size:.83rem"><b>have</b> (14×) · <b>been</b> · <b>had</b> (10×) · <b>was/were</b> · <b>does/did</b> — pojavljajo se v gap fill ko je v stavku že del glagolske fraze.</p>
+      </div>
+      <div class="strat-cell">
+        <h4>Other linkers</h4>
+        <p style="font-size:.83rem"><b>there</b> (14×) v "there is/are" · <b>one</b> (13×) kot zaimek ("the one who") · <b>even</b> (9×) za poudarek · <b>such</b> v "such as" · <b>not</b> (11×) za negacijo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAP FILL MINI QUIZ -->
+  <div class="quiz-box">
+    <h4>Hitri test — Gap fill</h4>
+    <p style="font-size:.82rem;color:var(--ink2);margin-bottom:1rem">Zapolni vrzeli. Klikni <em>Preveri</em> ali pa Hint za namig.</p>
+    <div id="gfQuiz"></div>
+    <button class="quiz-btn" onclick="checkGFQuiz()">Preveri odgovore</button>
+    <button class="quiz-btn" style="background:var(--paper3);color:var(--ink);margin-left:.4rem" onclick="resetGFQuiz()">Ponovi</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- 3. GLAGOLSKE OBLIKE -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="section" id="verbs">
+  <div class="sec-header">
+    <span class="sec-num">3</span>
+    <h2 class="sec-title">Glagolske oblike — <em>gap fill (verbs)</em></h2>
+  </div>
+
+  <p>Gap fill (verbs) je najtežji del: daš glagol v oklepaju, sestaviti moraš pravo obliko. <strong>531 primerov</strong> iz 60 matur pokaže jasen vzorec: <strong>perfect, passive in modal</strong> skupaj pokrivajo več kot 50 % vseh odgovorov.</p>
+
+  <!-- STAT BARS -->
+  <div style="margin:1.5rem 0 2rem">
+    <div id="catBars"></div>
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-bar" id="verbFilter"></div>
+  <div class="verb-cloud" id="verbCloud"></div>
+
+  <!-- TENSE SECTIONS -->
+
+  <!-- SIMPLE -->
+  <div class="tense-section">
+    <h3>Simple tenses <span class="badge" style="background:rgba(26,107,138,.1);color:var(--accent2)">83 primerov</span></h3>
+    <div class="formula"><span class="dim">Present:</span> <span class="kw">V / V-s</span> <span class="dim">| Past:</span> <span class="kw">V-ed / irregular</span></div>
+    <div class="callout blue">
+      <strong>Signal words za simple</strong>
+      always · usually · often · sometimes · never · every day · yesterday · last year · in 1990 · ago
+    </div>
+    <div class="examples">
+      <div class="ex"><span class="ex-q">Pres.</span><span class="ex-s">She <b>works</b> at the university. (work → works, 3rd person)</span></div>
+      <div class="ex"><span class="ex-q">Past</span><span class="ex-s">The company <b>introduced</b> the policy in 2010.</span></div>
+      <div class="ex"><span class="ex-q">Irr.</span><span class="ex-s">Sales <b>rose</b> sharply last quarter. (rise → rose → risen)</span></div>
+    </div>
+    <h4 class="subhead">Nepravilni glagoli ki se pojavljajo na maturah</h4>
+    <div class="chips">
+      <span class="chip chip-b">rise → rose → risen</span>
+      <span class="chip chip-b">lead → led → led</span>
+      <span class="chip chip-b">take → took → taken</span>
+      <span class="chip chip-b">make → made → made</span>
+      <span class="chip chip-b">run → ran → run</span>
+      <span class="chip chip-b">live → lived → lived</span>
+      <span class="chip chip-b">become → became → become</span>
+      <span class="chip chip-b">come → came → come</span>
+      <span class="chip chip-b">know → knew → known</span>
+      <span class="chip chip-b">see → saw → seen</span>
+    </div>
+  </div>
+
+  <!-- PERFECT -->
+  <div class="tense-section">
+    <h3>Perfect tenses <span class="badge" style="background:rgba(192,57,43,.1);color:var(--accent)">82 primerov</span></h3>
+    <div class="formula"><span class="kw">have/has/had</span> + <span class="ph">past participle</span></div>
+    <div class="callout">
+      <strong>Kdaj</strong>
+      Present perfect: dejanje v preteklosti z vplivom na sedanjost ("she <b>has lived</b> here for 10 years"). Past perfect: dejanje pred drugim preteklim dejanjem ("before he arrived, she <b>had left</b>").
+    </div>
+    <table class="signal-table">
+      <thead><tr><th>Signal words</th><th>Oblika</th><th>Primer</th></tr></thead>
+      <tbody>
+        <tr><td>for · since · just · already · yet · ever · never · recently</td><td class="mono">have/has + pp</td><td style="font-style:italic;font-size:.82rem">Scientists <b>have discovered</b> a new species.</td></tr>
+        <tr><td>by the time · before · after · when (past)</td><td class="mono">had + pp</td><td style="font-style:italic;font-size:.82rem">By 2010, they <b>had completed</b> the study.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout gold">
+      <strong>Trik</strong>
+      Ko je v stavku "since" ali "for" z obdobjem, je odgovor <em>skoraj zagotovo</em> present perfect ali past perfect continuous.
+    </div>
+  </div>
+
+  <!-- PASSIVE -->
+  <div class="tense-section">
+    <h3>Passive voice <span class="badge" style="background:rgba(26,122,74,.1);color:var(--accent3)">29 + 29 primerov</span></h3>
+    <div class="formula"><span class="kw">be</span> <span class="dim">(ustrezna oblika)</span> + <span class="ph">past participle</span></div>
+    <div class="callout green">
+      <strong>Kdaj</strong>
+      Ko akter ni znan, ni pomemben ali je poudarek na dejanju. Pogosto v akademskih/novinarskih besedilih — točno tip besedil na maturi.
+    </div>
+    <table class="signal-table">
+      <thead><tr><th>Čas</th><th>Formula</th><th>Primer</th></tr></thead>
+      <tbody>
+        <tr><td>Present passive</td><td class="mono">is/are + pp</td><td style="font-style:italic;font-size:.82rem">The law <b>is enforced</b> by the police.</td></tr>
+        <tr><td>Past passive</td><td class="mono">was/were + pp</td><td style="font-style:italic;font-size:.82rem">The building <b>was constructed</b> in 1900.</td></tr>
+        <tr><td>Perfect passive</td><td class="mono">has/have been + pp</td><td style="font-style:italic;font-size:.82rem">A cure <b>has been found</b>.</td></tr>
+        <tr><td>Modal passive</td><td class="mono">modal + be + pp</td><td style="font-style:italic;font-size:.82rem">It <b>should be noted</b> that...</td></tr>
+        <tr><td>Future passive</td><td class="mono">will be + pp</td><td style="font-style:italic;font-size:.82rem">The report <b>will be published</b> soon.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Kako prepoznaš da je pasiv?</strong>
+      Subjekt stavka je "žrtev" dejanja, ne izvajalec. By + agent neobvezno. Glagol v oklepaju je transitiven (ima objekt).
+    </div>
+  </div>
+
+  <!-- CONTINUOUS -->
+  <div class="tense-section">
+    <h3>Continuous / Progressive <span class="badge" style="background:rgba(184,134,11,.1);color:var(--gold)">31 primerov</span></h3>
+    <div class="formula"><span class="kw">be</span> <span class="dim">(ustrezna oblika)</span> + <span class="ph">V-ing</span></div>
+    <div class="callout gold">
+      <strong>Signal words</strong>
+      at the moment · right now · currently · at that time · while · when (za past) · still · these days
+    </div>
+    <div class="examples">
+      <div class="ex"><span class="ex-q">Pres.</span><span class="ex-s">The economy <b>is growing</b> at 3% a year.</span></div>
+      <div class="ex"><span class="ex-q">Past</span><span class="ex-s">While she <b>was working</b>, he called.</span></div>
+      <div class="ex"><span class="ex-q">Perfect</span><span class="ex-s">They <b>have been living</b> here since 2010.</span></div>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="tense-section">
+    <h3>Modal verbs <span class="badge" style="background:rgba(26,107,138,.1);color:var(--accent2)">26 primerov</span></h3>
+    <div class="formula"><span class="kw">modal</span> + <span class="ph">bare infinitive</span> &nbsp;|&nbsp; <span class="kw">modal</span> + <span class="kw">have</span> + <span class="ph">pp</span></div>
+
+    <table class="signal-table">
+      <thead><tr><th>Modal</th><th>Pomen</th><th>Primer</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">can / could</td><td style="font-size:.83rem">zmožnost (sedanj/pretekl)</td><td style="font-style:italic;font-size:.82rem">She <b>could</b> speak three languages.</td></tr>
+        <tr><td class="mono">must / have to</td><td style="font-size:.83rem">obveznost / sklepanje</td><td style="font-style:italic;font-size:.82rem">It <b>must</b> be true — I saw it.</td></tr>
+        <tr><td class="mono">should / ought to</td><td style="font-size:.83rem">priporočilo</td><td style="font-style:italic;font-size:.82rem">You <b>should</b> see a doctor.</td></tr>
+        <tr><td class="mono">would</td><td style="font-size:.83rem">pogojnik / pretekla navada</td><td style="font-style:italic;font-size:.82rem">He <b>would</b> visit every summer.</td></tr>
+        <tr><td class="mono">might / may</td><td style="font-size:.83rem">možnost</td><td style="font-style:italic;font-size:.82rem">It <b>might</b> rain tomorrow.</td></tr>
+        <tr><td class="mono">modal + have + pp</td><td style="font-size:.83rem">o preteklosti</td><td style="font-style:italic;font-size:.82rem">She <b>should have studied</b> more.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PARTICIPLE / GERUND -->
+  <div class="tense-section">
+    <h3>Gerund &amp; Participles <span class="badge" style="background:rgba(26,122,74,.1);color:var(--accent3)">77 primerov</span></h3>
+
+    <div class="strategy-grid">
+      <div class="strat-cell">
+        <h4>Gerund (V-ing kot samostalnik)</h4>
+        <p style="font-size:.83rem">Po glagolih: <b>enjoy, avoid, finish, consider, keep, stop, suggest, imagine, mind, deny, risk</b></p>
+        <p style="font-size:.83rem">Po predlogih: "before <b>leaving</b>" · "instead of <b>going</b>"</p>
+      </div>
+      <div class="strat-cell">
+        <h4>Infinitive (to + V)</h4>
+        <p style="font-size:.83rem">Po glagolih: <b>want, hope, decide, plan, manage, agree, refuse, seem, tend, expect, need, offer, promise, fail</b></p>
+        <p style="font-size:.83rem">Za namen: "he left <b>to find</b> work"</p>
+      </div>
+    </div>
+
+    <div class="formula"><span class="dim">Having + pp:</span> <span class="ph">having won</span> <span class="dim">= ko je eno dejanje prej od drugega</span></div>
+    <div class="formula"><span class="dim">Being + pp:</span> <span class="ph">being attacked</span> <span class="dim">= pasivni particip</span></div>
+
+    <div class="examples">
+      <div class="ex"><span class="ex-q">Gerund</span><span class="ex-s">She avoided <b>making</b> eye contact. (avoid + gerund)</span></div>
+      <div class="ex"><span class="ex-q">Inf.</span><span class="ex-s">He managed <b>to escape</b> from the building.</span></div>
+      <div class="ex"><span class="ex-q">Having</span><span class="ex-s"><b>Having finished</b> the report, she went home.</span></div>
+    </div>
+  </div>
+
+  <!-- VERB QUIZ -->
+  <div class="quiz-box">
+    <h4>Test — Glagolske oblike</h4>
+    <p style="font-size:.82rem;color:var(--ink2);margin-bottom:1rem">Daj glagol (v oklepaju) v pravo obliko.</p>
+    <div id="verbQuiz"></div>
+    <button class="quiz-btn" onclick="checkVerbQuiz()">Preveri</button>
+    <button class="quiz-btn" style="background:var(--paper3);color:var(--ink);margin-left:.4rem" onclick="resetVerbQuiz()">Ponovi</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- 4. WORD FORMATION -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="section" id="wordform">
+  <div class="sec-header">
+    <span class="sec-num">4</span>
+    <h2 class="sec-title">Word Formation — <em>tvorjenje besed</em></h2>
+  </div>
+
+  <p>Dobiš koren besede (npr. <em>BRUTAL</em>), v luknji pa potrebuješ drugo besedno vrsto (pridevnik, prislov, samostalnik). Ni ugibanja — je poznavanje suffixov.</p>
+
+  <div class="callout blue">
+    <strong>Postopek</strong>
+    1) Preberi stavek in ugotovi, katero besedno vrsto potrebuješ (glagol? pridevnik? prislov? samostalnik?). 2) Vzemi koren iz oklepaja. 3) Dodaj pravi suffix. 4) Preveri ali morda potrebuješ negativni prefix (<em>un-, in-, dis-</em>).
+  </div>
+
+  <h4 class="subhead">Suffixes za samostalnike</h4>
+  <div class="suffix-grid">
+    <div class="suffix-cell"><h4>-tion / -sion / -ation</h4><p class="examples">act→<b>action</b> · restrict→<b>restriction</b> · compensate→<b>compensation</b></p></div>
+    <div class="suffix-cell"><h4>-ment</h4><p class="examples">establish→<b>establishment</b> · govern→<b>government</b> · achieve→<b>achievement</b></p></div>
+    <div class="suffix-cell"><h4>-ness</h4><p class="examples">aware→<b>awareness</b> · helpful→<b>helpfulness</b> · dark→<b>darkness</b></p></div>
+    <div class="suffix-cell"><h4>-ity / -ty</h4><p class="examples">brutal→<b>brutality</b> · symbol→<b>symbolity</b>? Ne! → <b>symbolism</b></p></div>
+    <div class="suffix-cell"><h4>-ism / -ist</h4><p class="examples">symbol→<b>symbolism</b> · economy→<b>economist</b></p></div>
+    <div class="suffix-cell"><h4>-er / -or / -ist</h4><p class="examples">employ→<b>employer</b> · retail→<b>retailer</b></p></div>
+    <div class="suffix-cell"><h4>-ance / -ence</h4><p class="examples">know→<b>knowledge</b>? Ne! → significance · evidence</p></div>
+    <div class="suffix-cell"><h4>-al</h4><p class="examples">person→<b>personal</b> (adj!) · arrive→<b>arrival</b> (noun)</p></div>
+  </div>
+
+  <h4 class="subhead">Suffixes za pridevnike</h4>
+  <div class="suffix-grid">
+    <div class="suffix-cell"><h4>-al / -ial</h4><p class="examples">region→<b>regional</b> · economy→<b>economical</b></p></div>
+    <div class="suffix-cell"><h4>-ic / -ical</h4><p class="examples">symbol→<b>symbolic</b> · history→<b>historical</b></p></div>
+    <div class="suffix-cell"><h4>-ful / -less</h4><p class="examples">help→<b>helpful</b> · help→<b>helpless</b></p></div>
+    <div class="suffix-cell"><h4>-ive</h4><p class="examples">impress→<b>impressive</b> · attract→<b>attractive</b></p></div>
+    <div class="suffix-cell"><h4>-ous / -ious</h4><p class="examples">anxiety→<b>anxious</b> · fame→<b>famous</b></p></div>
+    <div class="suffix-cell"><h4>-able / -ible</h4><p class="examples">avail→<b>available</b> · access→<b>accessible</b></p></div>
+    <div class="suffix-cell"><h4>-ary / -ory</h4><p class="examples">element→<b>elementary</b></p></div>
+    <div class="suffix-cell"><h4>-ly (adjective!)</h4><p class="examples">friend→<b>friendly</b> · love→<b>lovely</b> · cost→<b>costly</b></p></div>
+  </div>
+
+  <h4 class="subhead">Suffixes za prislove</h4>
+  <div class="chips">
+    <span class="chip chip-g">pridevnik + <b>-ly</b></span>
+    <span class="chip chip-ink">primary→<b>primarily</b></span>
+    <span class="chip chip-ink">increasing→<b>increasingly</b></span>
+    <span class="chip chip-ink">physical→<b>physically</b></span>
+    <span class="chip chip-ink">individual→<b>individually</b></span>
+    <span class="chip chip-ink">systematic→<b>systematically</b></span>
+    <span class="chip chip-ink">distinctive→<b>distinctively</b></span>
+  </div>
+
+  <h4 class="subhead">Negativni prefixi</h4>
+  <div class="strategy-grid" style="margin-top:.5rem">
+    <div class="strat-cell">
+      <h4>un-</h4>
+      <p style="font-size:.83rem">unfamiliar · unknown · unlikely · unhelpful · uncomfortable · uncertain</p>
+    </div>
+    <div class="strat-cell">
+      <h4>in- / im- / ir- / il-</h4>
+      <p style="font-size:.83rem">insure / ensure (pazi!) · impossible · irregular · illegal · insignificant</p>
+    </div>
+    <div class="strat-cell">
+      <h4>dis-</h4>
+      <p style="font-size:.83rem">disagree · disappear · disorder · disregard (<em>regardless!</em>)</p>
+    </div>
+    <div class="strat-cell">
+      <h4>re-</h4>
+      <p style="font-size:.83rem">reorganise · rediscover · reconsider · rebuild</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Tipična past</strong>
+    <code>ensure</code> vs <code>insure</code> — oba sta pravilna! <code>ensure</code> = zagotoviti, <code>insure</code> = zavarovati. Na maturi sta se oba pojavila 3× in sta oba sprejemljiva. Prav tako <code>brutality</code> vs <code>brutalities</code>.
+  </div>
+
+  <!-- WF QUIZ -->
+  <div class="quiz-box">
+    <h4>Test — Word formation</h4>
+    <p style="font-size:.82rem;color:var(--ink2);margin-bottom:1rem">Tvori pravo obliko besede v oklepaju.</p>
+    <div id="wfQuiz"></div>
+    <button class="quiz-btn" onclick="checkWFQuiz()">Preveri</button>
+    <button class="quiz-btn" style="background:var(--paper3);color:var(--ink);margin-left:.4rem" onclick="resetWFQuiz()">Ponovi</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- 5. VSE BESEDE -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="section" id="besede">
+  <div class="sec-header">
+    <span class="sec-num">5</span>
+    <h2 class="sec-title">Referenca — <em>vse besede</em></h2>
+  </div>
+
+  <p>Spodaj so vse besede iz 60 maturitetnih izpitov (2004–2025), razvrščene po pogostosti. Velikost = pogostost pojavitve.</p>
+
+  <div class="filter-bar">
+    <button class="filt-btn on" data-wf="all" onclick="setWordFilter('all')">Vse</button>
+    <button class="filt-btn" data-wf="gap_fill" onclick="setWordFilter('gap_fill')">Gap fill</button>
+    <button class="filt-btn" data-wf="word_formation" onclick="setWordFilter('word_formation')">Word formation</button>
+    <button class="filt-btn" data-wf="gap_fill_verbs" onclick="setWordFilter('gap_fill_verbs')">Glagolske oblike</button>
+    <input id="wordSearch" style="font-family:var(--mono);font-size:.75rem;padding:.3rem .6rem;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);outline:none;border-radius:2px;width:160px" placeholder="Išči…" oninput="renderWordCloud()">
+  </div>
+  <div id="wordCloud" style="display:flex;flex-wrap:wrap;gap:.4rem;padding:1.4rem;background:var(--paper2);border:1px solid var(--rule);border-radius:2px;min-height:120px"></div>
+</section>
+
+</div><!-- /container -->
+
+<footer>Angleščina SM · Pola 1 OR · Analiza 60 maturitetnih izpitov 2004–2025 · Podatki: ric.si</footer>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const D = {"stats": {"total_exams": 60, "total_entries": 2458, "unique_words": 1315, "gf_total": 1614, "gf_unique": 546, "gfv_total": 531, "gfv_unique": 499, "wf_total": 313, "wf_unique": 294}, "gf": [["to", 51], ["which", 36], ["in", 35], ["as", 35], ["the", 34], ["that", 33], ["a", 32], ["and", 26], ["when", 26], ["for", 25], ["with", 24], ["by", 22], ["there", 22], ["if", 21], ["on", 21], ["it", 20], ["at", 20], ["have", 19], ["who", 17], ["what", 17], ["but", 17], ["from", 16], ["one", 16], ["not", 16], ["of", 15], ["their", 15], ["how", 15], ["up", 14], ["where", 12], ["than", 12], ["after", 11], ["because", 11], ["even", 11], ["had", 11], ["since", 11], ["could", 10], ["would", 10], ["was", 10], ["no", 10], ["an", 10], ["all", 10], ["this", 10], ["be", 9], ["also", 8], ["whose", 8], ["few", 8], ["might", 8], ["while", 8], ["has", 8], ["into", 7], ["out", 7], ["them", 7], ["though", 7], ["yet", 7], ["are", 6], ["like", 6], ["such", 6], ["will", 6], ["why", 6], ["before", 6], ["just", 6], ["so", 6], ["any", 6], ["some", 6], ["each", 6], ["although", 6], ["were", 5], ["until", 5], ["its", 5], ["many", 5], ["without", 5], ["whom", 5], ["our", 5], ["little", 5], ["less", 5], ["every", 5], ["off", 4], ["about", 4], ["those", 4], ["these", 4], ["between", 4], ["been", 4], ["other", 4], ["over", 4], ["should", 4], ["only", 4], ["can", 4], ["still", 4], ["get", 4], ["till", 4], ["never", 4], ["his", 3], ["well", 3], ["then", 3], ["is", 3], ["per", 3], ["more", 3], ["actually", 3], ["once", 3], ["they", 3], ["usually", 3], ["whether", 3], ["her", 3], ["among", 3], ["him", 3], ["through", 3], ["zero", 3], ["much", 3], ["being", 3], ["down", 2], ["woman", 2], ["us", 2], ["however", 2], ["same", 2], ["does", 2], ["far", 2], ["way", 2], ["due", 2], ["itself", 2], ["too", 2]], "wf": [["primarily", 3], ["brutality", 3], ["belief", 3], ["ensure", 3], ["insure", 3], ["unfamiliar", 2], ["increasingly", 2], ["threaten", 2], ["impressive", 2], ["helpful", 2], ["knowledge", 2], ["personal", 2], ["government", 2], ["symbolic", 2], ["anxious", 1], ["physically", 1], ["awareness", 1], ["collection", 1], ["collectivity", 1], ["collective", 1], ["authentic", 1], ["authentication", 1], ["action nesprejemljivo: actions", 1], ["deprivation", 1], ["deprivations", 1], ["depriving", 1], ["regularly", 1], ["literate", 1], ["fifth", 1], ["unsure", 1], ["hardworking", 1], ["working", 1], ["irritation(s)", 1], ["recovering", 1], ["recovery", 1], ["tearful", 1], ["tearing", 1], ["tearless", 1], ["absence", 1], ["surprisingly", 1], ["commitment(s)", 1], ["nursery", 1], ["heavenly", 1], ["volcanic", 1], ["complaints", 1], ["protesters", 1], ["protestors", 1], ["irritation", 1], ["immigration", 1], ["hugely", 1], ["flights", 1], ["exclusive", 1], ["anonymously", 1], ["variously", 1], ["security", 1], ["astonishing", 1], ["colourful", 1], ["colorful", 1], ["obedience", 1], ["signature", 1], ["invention", 1], ["invasion", 1], ["inhabitants", 1], ["poverty", 1], ["poorness", 1], ["regional", 1], ["systematically", 1], ["systemically", 1], ["economic", 1], ["compensation", 1], ["brutalities", 1], ["regardless", 1], ["response", 1], ["restrictions", 1], ["horrible", 1], ["horrific", 1], ["horrifying", 1], ["horrendous", 1], ["monarchy", 1], ["monarchism", 1], ["monarchists", 1], ["delightfully", 1], ["inexpensive", 1], ["non-expensive", 1], ["unexpensive", 1], ["evidence", 1], ["classy", 1], ["first-class", 1], ["high-class", 1], ["top-class", 1], ["affordable", 1], ["scenery", 1], ["sceneries", 1], ["rental", 1], ["renting", 1], ["relaxation", 1], ["bakery", 1], ["bakehouse", 1], ["baker", 1], ["bakers", 1], ["architecture", 1], ["architectures", 1], ["investment", 1], ["investments", 1], ["investing", 1], ["freshly", 1], ["excellent", 1], ["inability", 1], ["consistently", 1], ["intervention", 1], ["interventions", 1], ["intervening", 1], ["shyness", 1], ["advisor", 1], ["adviser", 1], ["choice", 1], ["choices", 1], ["choosing", 1], ["discomfort", 1], ["genetic", 1]], "gfv": [["was", 4, "to be"], ["to get", 3, "infinitive"], ["would remain", 3, "modal"], ["led", 3, "past/past participle"], ["live", 3, "simple"], ["makes", 3, "simple"], ["seeing", 2, "gerund/participle"], ["has led", 2, "perfect"], ["living", 2, "gerund/participle"], ["took", 2, "simple"], ["allowing", 2, "gerund/participle"], ["would be", 2, "modal"], ["run", 2, "simple"], ["to avoid", 2, "infinitive"], ["should have been", 2, "perfect passive"], ["has remained", 2, "perfect"], ["giving", 2, "gerund/participle"], ["being", 2, "participle/gerund"], ["might have done", 2, "perfect"], ["may have done", 2, "perfect"], ["has been", 2, "perfect passive"], ["being known", 2, "participle/gerund"], ["losing", 2, "gerund/participle"], ["to lose", 2, "infinitive"], ["taking", 2, "gerund/participle"], ["have drowned", 1, "perfect"], ["claiming", 1, "gerund/participle"], ["was later found", 1, "to be"], ["issued", 1, "past/past participle"], ["spending", 1, "gerund/participle"], ["has been informed", 1, "perfect passive"], ["appreciate", 1, "simple"], ["had", 1, "perfect"], ["will be", 1, "future simple"], ["to come", 1, "infinitive"], ["knows", 1, "simple"], ["to be left", 1, "infinitive"], ["hadn't been 1.", 1, "simple"], ["was taught", 1, "to be"], ["realise 3.", 1, "simple"], ["wondered", 1, "past/past participle"], ["to become 6.", 1, "infinitive"], ["will have", 1, "perfect"], ["have increased 8.", 1, "perfect"], ["embodied 9.", 1, "simple"], ["grew 10.", 1, "simple"], ["to give up", 1, "infinitive"], ["threw", 1, "simple"], ["to find out", 1, "infinitive"], ["had collided", 1, "perfect"], ["called", 1, "past/past participle"], ["pointing", 1, "gerund/participle"], ["had been stripped", 1, "perfect passive"], ["caused", 1, "past/past participle"], ["believe", 1, "simple"], ["was buried", 1, "passive"], ["lacks", 1, "simple"], ["to have struck 1.", 1, "perfect"], ["dedicated 2.", 1, "simple"], ["drew 3.", 1, "simple"], ["to establish 4.", 1, "infinitive"], ["had hoped", 1, "perfect"], ["being attacked", 1, "participle/gerund"], ["have never been brought", 1, "perfect"], ["to have been", 1, "perfect passive"], ["committed", 1, "past/past participle"], ["has been targeted", 1, "perfect passive"], ["is witnessing", 1, "continuous"], ["have been killed", 1, "perfect passive"], ["suffering", 1, "gerund/participle"], ["have lost", 1, "perfect"], ["are being used", 1, "passive"], ["had risen", 1, "perfect"], ["have already surpassed", 1, "perfect"], ["going", 1, "gerund/participle"], ["is facing", 1, "continuous"], ["was caught", 1, "to be"], ["given", 1, "past/past participle"], ["to earn", 1, "infinitive"], ["breathing", 1, "gerund/participle"], ["would come", 1, "modal"], ["could have happened", 1, "perfect"], ["covering", 1, "gerund/participle"], ["to make", 1, "infinitive"], ["was admitted", 1, "passive"], ["rang", 1, "simple"], ["caught", 1, "simple"], ["not to think", 1, "simple"], ["to be turned", 1, "infinitive"], ["had not been", 1, "perfect"], ["has killed", 1, "perfect"], ["infected", 1, "past/past participle"], ["can be discounted", 1, "past/past participle"], ["crossed", 1, "past/past participle"], ["will provide", 1, "future simple"], ["to happen", 1, "infinitive"], ["transmitted", 1, "past/past participle"], ["was known", 1, "to be"], ["is still happening", 1, "continuous"], ["not to build", 1, "simple"], ["does", 1, "simple"], ["is going to do", 1, "future (going to)"], ["will do", 1, "future simple"], ["could be", 1, "modal"], ["might be", 1, "modal"], ["have lived ne sprejmemo: have been living", 1, "perfect continuous"], ["has been required", 1, "perfect passive"], ["is required", 1, "passive"], ["is built", 1, "to be"], ["was built", 1, "to be"], ["had been standing", 1, "perfect continuous"], ["had stood", 1, "perfect"], ["standing", 1, "gerund/participle"], ["stood", 1, "simple"], ["were standing", 1, "continuous"], ["could be heard", 1, "modal"], ["having won", 1, "participle/gerund"], ["winning", 1, "gerund/participle"], ["has been surrounding", 1, "perfect continuous"], ["has surrounded", 1, "perfect"], ["is surrounding", 1, "continuous"], ["surrounds", 1, "simple"], ["to discover", 1, "infinitive"], ["weren't", 1, "simple"], ["wasn't", 1, "simple"], ["have never visited", 1, "perfect"], ["had never visited", 1, "perfect"], ["is", 1, "to be"], ["was going to be", 1, "future (going to)"], ["looking", 1, "gerund/participle"], ["has been making", 1, "perfect continuous"], ["has made", 1, "perfect"], ["is making", 1, "continuous"], ["having sampled", 1, "participle/gerund"], ["sampling", 1, "gerund/participle"], ["is getting", 1, "continuous"], ["has got", 1, "perfect"], ["has gotten", 1, "perfect"], ["has been getting", 1, "perfect continuous"], ["is taken", 1, "passive"], ["leading", 1, "gerund/participle"], ["can be eased", 1, "past/past participle"], ["could be eased", 1, "modal"], ["should be", 1, "modal"], ["was slipping", 1, "continuous"], ["had been slipping", 1, "perfect continuous"], ["would have slipped", 1, "perfect"], ["experiencing", 1, "gerund/participle"], ["have been cut", 1, "perfect passive"], ["has left", 1, "perfect"], ["leaves", 1, "simple"], ["is leaving", 1, "continuous"], ["left", 1, "simple"], ["is going to leave", 1, "future (going to)"], ["will leave", 1, "future simple"], ["remained", 1, "past/past participle"], ["to be published", 1, "infinitive"], ["is currently living", 1, "continuous"], ["currently lives", 1, "simple"], ["marrying", 1, "gerund/participle"], ["give", 1, "simple"], ["were giving", 1, "continuous"], ["was transformed", 1, "passive"], ["transformed", 1, "past/past participle"], ["lived", 1, "past/past participle"], ["was living", 1, "continuous"], ["had lived", 1, "perfect"], ["had been living", 1, "perfect continuous"], ["explains", 1, "simple"], ["are won", 1, "to be"], ["are to be won", 1, "to be"], ["wouldn’t have lost", 1, "perfect"], ["to influence", 1, "infinitive"], ["was elected", 1, "passive"], ["had been elected", 1, "perfect passive"], ["are constantly urged", 1, "passive"], ["are constantly being urged", 1, "passive"], ["are being constantly urged", 1, "passive"], ["have been constantly urged", 1, "perfect passive"], ["have constantly been urged", 1, "perfect"], ["lying", 1, "gerund/participle"], ["advises", 1, "simple"], ["has advised", 1, "perfect"], ["is advising", 1, "continuous"], ["has been advising", 1, "perfect continuous"], ["getting", 1, "gerund/participle"], ["to be getting", 1, "infinitive"], ["could be spent", 1, "modal"], ["can be spent", 1, "simple"], ["would take", 1, "modal"], ["was taking", 1, "continuous"], ["might have been doing", 1, "perfect continuous"], ["may have been doing", 1, "perfect continuous"], ["was driving", 1, "continuous"], ["was being driven", 1, "passive"], ["didn't stop", 1, "simple"], ["would not stop", 1, "modal"], ["6 m151-241-1-4", 1, "simple"], ["to have done", 1, "perfect"], ["to do", 1, "infinitive"], ["to be doing", 1, "infinitive"], ["published", 1, "past/past participle"], ["being published", 1, "participle/gerund"], ["based začetnico.", 1, "simple"], ["having been based", 1, "participle/gerund"], ["being based", 1, "participle/gerund"], ["were exercising", 1, "continuous"], ["exercised", 1, "past/past participle"], ["had been exercising", 1, "perfect continuous"], ["had exercised", 1, "perfect"], ["practise", 1, "simple"], ["practice", 1, "simple"], ["to reclaim", 1, "infinitive"], ["would have to", 1, "perfect"], ["has been searching", 1, "perfect continuous"], ["has searched", 1, "perfect"], ["have been searching", 1, "perfect continuous"], ["have searched", 1, "perfect"], ["had found", 1, "perfect"], ["found", 1, "simple"], ["were shot", 1, "to be"], ["had been shot", 1, "perfect passive"], ["was drawing", 1, "continuous"], ["sought", 1, "simple"], ["finding", 1, "gerund/participle"], ["hoping", 1, "gerund/participle"], ["visit", 1, "simple"], ["have not seen", 1, "perfect"], ["haven’t seen", 1, "past/past participle"], ["being destroyed", 1, "participle/gerund"], ["having been destroyed", 1, "participle/gerund"], ["destroyed", 1, "past/past participle"], ["taken", 1, "past/past participle"], ["being taken", 1, "participle/gerund"], ["are now getting banned", 1, "passive"], ["are now banned", 1, "passive"], ["have now been banned", 1, "perfect"], ["smile", 1, "simple"], ["making", 1, "gerund/participle"], ["having made", 1, "participle/gerund"], ["to lighten", 1, "infinitive"], ["having seen", 1, "participle/gerund"], ["to see", 1, "infinitive"], ["to understand", 1, "infinitive"], ["would suffer", 1, "modal"], ["would be suffering", 1, "future/cond. continuous"], ["were going to suffer", 1, "future (going to)"], ["was carried out", 1, "to be"], ["were carried out", 1, "to be"], ["was to be carried out", 1, "to be"], ["were to be carried out", 1, "to be"], ["had been carried out", 1, "perfect passive"], ["to act", 1, "infinitive"], ["to be acting", 1, "infinitive"], ["study", 1, "simple"], ["have studied", 1, "perfect"], ["get", 1, "simple"], ["have got(ten)", 1, "perfect"], ["are getting", 1, "continuous"], ["to recover", 1, "infinitive"], ["would attract", 1, "modal"], ["encouraged zapis navedenih rešitev z malo", 1, "simple"], ["having been encouraged začetnico.", 1, "participle/gerund"], ["had already formed", 1, "perfect"], ["should’ve been", 1, "modal"], ["to change", 1, "infinitive"], ["checking", 1, "gerund/participle"], ["had been stolen", 1, "perfect passive"], ["did not get", 1, "simple"], ["didn’t get", 1, "simple"], ["has collected", 1, "perfect"], ["is now serving", 1, "continuous"], ["linked", 1, "past/past participle"], ["being confiscated", 1, "participle/gerund"], ["returning", 1, "gerund/participle"], ["runs", 1, "simple"], ["breaking up", 1, "simple"], ["being broken up", 1, "participle/gerund"], ["have been moving", 1, "perfect continuous"], ["going up", 1, "simple"], ["go up", 1, "simple"], ["closed", 1, "past/past participle"], ["to meet", 1, "infinitive"], ["would place", 1, "modal"], ["was going to place", 1, "future (going to)"], ["to be transported", 1, "infinitive"], ["laid", 1, "simple"], ["are already closed", 1, "passive"], ["have already been closed", 1, "perfect"], ["have been already closed", 1, "perfect passive"], ["will not result", 1, "future simple"], ["won’t result", 1, "simple"], ["trapped", 1, "past/past participle"], ["succeed", 1, "past/past participle"], ["is running", 1, "continuous"], ["breaks", 1, "simple"], ["admiring", 1, "gerund/participle"], ["having admired", 1, "participle/gerund"], ["could prove", 1, "modal"], ["was able to prove", 1, "to be"], ["had developed", 1, "perfect"], ["developed", 1, "past/past participle"], ["scribbling", 1, "gerund/participle"], ["to write", 1, "infinitive"], ["to have written", 1, "perfect"], ["shrugging", 1, "gerund/participle"], ["shrug", 1, "simple"], ["had plucked", 1, "perfect"], ["plucked", 1, "past/past participle"], ["was plucking", 1, "continuous"], ["had been plucking", 1, "perfect continuous"], ["would immediately put", 1, "modal"], ["recognising", 1, "gerund/participle"], ["having recognised", 1, "participle/gerund"], ["to bring", 1, "infinitive"], ["eating", 1, "gerund/participle"], ["was taken", 1, "passive"], ["to symbolise", 1, "infinitive"], ["to symbolize", 1, "infinitive"], ["can be expressed", 1, "past/past participle"], ["regained", 1, "past/past participle"], ["might have", 1, "perfect"], ["may have", 1, "perfect"], ["putting", 1, "gerund/participle"], ["to be known", 1, "infinitive"], ["was bullied", 1, "passive"], ["being chained", 1, "participle/gerund"], ["would set up", 1, "modal"], ["was going to set up", 1, "future (going to)"], ["assuming", 1, "gerund/participle"], ["has recently been recognised", 1, "perfect"], ["has been recently recognised", 1, "perfect passive"], ["was recently recognised", 1, "passive"], ["having", 1, "participle/gerund"], ["could see", 1, "modal"], ["treats", 1, "simple"], ["is growing", 1, "continuous"], ["has grown", 1, "perfect"], ["was estimated", 1, "passive"], ["triggered", 1, "past/past participle"], ["being triggered", 1, "participle/gerund"], ["having been triggered", 1, "participle/gerund"], ["had claimed", 1, "perfect"], ["claimed", 1, "past/past participle"], ["was claiming", 1, "continuous"], ["was going to remain", 1, "future (going to)"], ["has been called", 1, "perfect passive"], ["would have only made", 1, "perfect"], ["would only have made", 1, "perfect"], ["only would have made", 1, "perfect"], ["falling", 1, "gerund/participle"], ["having fallen", 1, "participle/gerund"], ["was collapsing", 1, "continuous"], ["emerged", 1, "past/past participle"], ["had been set up", 1, "perfect passive"], ["were set up", 1, "to be"], ["can’t have been been", 1, "perfect passive"], ["couldn’t have been", 1, "perfect passive"], ["could not have been", 1, "perfect passive"], ["tell", 1, "simple"], ["may have been", 1, "perfect passive"], ["might have been", 1, "perfect passive"], ["has risen", 1, "perfect"], ["is rising", 1, "continuous"], ["rose", 1, "simple"], ["are now coming", 1, "continuous"], ["have now come", 1, "perfect"], ["can be trained", 1, "past/past participle"], ["accepting", 1, "gerund/participle"], ["hadn’t taken", 1, "past/past participle"], ["to be weighed", 1, "infinitive"], ["weighing", 1, "gerund/participle"], ["to combine", 1, "infinitive"], ["has now been completed", 1, "perfect"], ["is now being completed", 1, "passive"], ["had to turn", 1, "perfect"], ["had had to turn", 1, "perfect"], ["would have to turn", 1, "perfect"], ["were trained", 1, "passive"], ["to describe", 1, "infinitive"], ["will never forget", 1, "future simple"], ["never forgets", 1, "simple"], ["offer", 1, "simple"], ["has given", 1, "perfect"], ["don’t undertake", 1, "simple"], ["haven’t undertaken", 1, "past/past participle"], ["would apply", 1, "modal"], ["having to perform", 1, "participle/gerund"], ["visiting  on visiting", 1, "gerund/participle"], ["to visit", 1, "infinitive"], ["spoke", 1, "simple"], ["would speak", 1, "modal"], ["become", 1, "simple"], ["was immediately detected", 1, "passive"], ["had just happened", 1, "perfect"], ["to take", 1, "infinitive"], ["to have taken", 1, "perfect"], ["having taken", 1, "participle/gerund"], ["hadn’t lived", 1, "past/past participle"], ["hadn’t been living", 1, "gerund/participle"], ["fending off", 1, "simple"], ["have become", 1, "perfect"], ["am becoming", 1, "gerund/participle"], ["was diagnosed", 1, "passive"], ["got diagnosed", 1, "past/past participle"], ["eat", 1, "simple"], ["driven", 1, "past/past participle"], ["being driven", 1, "participle/gerund"], ["not to be", 1, "simple"], ["not being", 1, "gerund/participle"], ["turns", 1, "simple"], ["has turned", 1, "perfect"], ["have been", 1, "perfect passive"], ["cut out", 1, "simple"], ["will make", 1, "future simple"], ["does make", 1, "simple"], ["is going to make", 1, "future (going to)"], ["could say", 1, "modal"], ["were eating", 1, "continuous"], ["ate", 1, "simple"], ["not eating", 1, "gerund/participle"], ["seem", 1, "simple"], ["to be/get convicted", 1, "infinitive"], ["have turned", 1, "perfect"], ["turn", 1, "simple"], ["are rated", 1, "passive"], ["have been rated", 1, "perfect passive"], ["rate", 1, "simple"], ["was/were not describing", 1, "continuous"], ["have been judging", 1, "perfect continuous"], ["have judged", 1, "perfect"], ["turned", 1, "past/past participle"], ["would make", 1, "modal"], ["were", 1, "to be"], ["to share", 1, "infinitive"], ["are going to share", 1, "future (going to)"], ["will share", 1, "future simple"], ["are dealing", 1, "continuous"], ["gazing", 1, "gerund/participle"], ["have been recognized/recognised", 1, "perfect passive"], ["are recognized/recognised", 1, "passive"], ["being/getting elected", 1, "participle/gerund"], ["would have been", 1, "perfect passive"], ["relied", 1, "past/past participle"], ["would rely", 1, "modal"], ["were permitted", 1, "passive"], ["would be permitted", 1, "modal"], ["had become", 1, "perfect"], ["known začetnico", 1, "simple"], ["might have bitten", 1, "perfect"], ["had once been looked after", 1, "perfect"], ["once had been looked after", 1, "perfect passive"], ["had been once looked after", 1, "perfect passive"], ["produced", 1, "past/past participle"], ["being produced", 1, "participle/gerund"], ["gaining", 1, "gerund/participle"], ["having gained", 1, "participle/gerund"], ["remains", 1, "simple"], ["has/have hosted", 1, "perfect"], ["has/have been hosting", 1, "perfect continuous"], ["to pinpoint", 1, "infinitive"], ["will ever have", 1, "perfect"], ["have ever had", 1, "perfect"], ["ever had", 1, "perfect"], ["would have filled", 1, "perfect"], ["began", 1, "simple"], ["had thrown away", 1, "perfect"], ["threw away", 1, "simple"], ["are treated", 1, "passive"], ["having grown up", 1, "participle/gerund"], ["will reread", 1, "future simple"], ["is going to reread", 1, "future (going to)"], ["is illustrated", 1, "passive"], ["have been writing", 1, "perfect continuous"], ["sums up", 1, "simple"], ["believing", 1, "gerund/participle"], ["am sometimes sent", 1, "simple"], ["sometimes get sent", 1, "simple"], ["pile up", 1, "simple"], ["would enjoy", 1, "modal"], ["was going to enjoy", 1, "future (going to)"], ["keep", 1, "simple"], ["is introducing", 1, "continuous"], ["has introduced", 1, "perfect"], ["opened", 1, "past/past participle"], ["was opened", 1, "passive"], ["had decided", 1, "perfect"], ["meaning", 1, "gerund/participle"], ["is going", 1, "continuous"], ["has gone", 1, "perfect"], ["enrolled", 1, "past/past participle"], ["sending", 1, "gerund/participle"], ["send", 1, "simple"], ["to offer", 1, "infinitive"], ["have hugely increased", 1, "perfect"], ["make up", 1, "simple"], ["would have welcomed", 1, "perfect"], ["was founded", 1, "passive"], ["counts", 1, "simple"]], "gfv_cats": [["simple", 83], ["perfect", 82], ["gerund/participle", 47], ["infinitive", 43], ["past/past participle", 42], ["continuous", 31], ["participle/gerund", 30], ["perfect passive", 29], ["passive", 29], ["modal", 26], ["to be", 18], ["perfect continuous", 18], ["future (going to)", 11], ["future simple", 9], ["future/cond. continuous", 1]]};
+
+// ─── PREPOSITION CHIPS ────────────────────────────────────────────────────────
+const preps = ['to','in','as','with','by','at','on','from','of','into','for','about','through','over','between','among','against','across','along','beyond','within'];
+const prepEl = document.getElementById('prepChips');
+if(prepEl) {
+  const gfMap = Object.fromEntries(D.gf.map(([w,c])=>[w,c]));
+  preps.forEach(p => {
+    const c = gfMap[p] || '';
+    const el = document.createElement('span');
+    el.className = 'chip chip-r';
+    el.innerHTML = p + (c ? `<sup class="freq">${c}×</sup>` : '');
+    prepEl.appendChild(el);
+  });
+}
+
+// ─── CATEGORY BARS ───────────────────────────────────────────────────────────
+const catColors = {
+  'simple':'#1a6b8a','perfect':'#c0392b','gerund/participle':'#1a7a4a',
+  'infinitive':'#b8860b','past/past participle':'#555','continuous':'#7b2d8b',
+  'participle/gerund':'#1a5a3a','perfect passive':'#8b1a1a','passive':'#b85a00',
+  'modal':'#1a4a8a','to be':'#666','perfect continuous':'#7a1a5a',
+  'future (going to)':'#1a7a1a','future simple':'#4a8a1a','future/cond. continuous':'#888'
+};
+const catBarsEl = document.getElementById('catBars');
+if(catBarsEl) {
+  const maxN = D.gfv_cats[0][1];
+  catBarsEl.innerHTML = D.gfv_cats.map(([cat,n]) => `
+    <div class="progress-row">
+      <span class="progress-label">${cat}</span>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" style="width:${(n/maxN*100).toFixed(1)}%;background:${catColors[cat]||'#888'}"></div>
+      </div>
+      <span class="progress-count">${n}</span>
+    </div>`).join('');
+}
+
+// ─── VERB FILTER & CLOUD ─────────────────────────────────────────────────────
+let activeCat = 'all';
+function buildVerbFilter() {
+  const el = document.getElementById('verbFilter');
+  if(!el) return;
+  const cats = ['all', ...D.gfv_cats.map(([c])=>c)];
+  el.innerHTML = cats.map(c => `<button class="filt-btn${c==='all'?' on':''}" onclick="setVerbCat('${c}')">${c==='all'?'Vse':c}</button>`).join('');
+}
+function setVerbCat(cat) {
+  activeCat = cat;
+  document.querySelectorAll('#verbFilter .filt-btn').forEach(b => b.classList.toggle('on', b.textContent===(cat==='all'?'Vse':cat)));
+  renderVerbCloud();
+}
+function renderVerbCloud() {
+  const data = activeCat==='all' ? D.gfv : D.gfv.filter(([w,c,cat])=>cat===activeCat);
+  const maxC = data[0]?.[1]||1;
+  document.getElementById('verbCloud').innerHTML = data.map(([w,c,cat])=>{
+    const r=c/maxC; const sz=(0.78+r*0.6).toFixed(2);
+    const col = catColors[cat]||'#888';
+    return `<span style="font-family:var(--mono);font-size:${sz}rem;padding:.2rem .5rem;border-radius:3px;border:1px solid ${col};color:${col};background:${col}18;cursor:default" title="${cat}">${w}<sup style="font-size:.55em;opacity:.6">${c}×</sup></span>`;
+  }).join('');
+}
+buildVerbFilter();
+renderVerbCloud();
+
+// ─── WORD CLOUD (section 5) ────────────────────────────────────────────────
+let wordFilter = 'all';
+function setWordFilter(f) {
+  wordFilter = f;
+  document.querySelectorAll('[data-wf]').forEach(b=>b.classList.toggle('on',b.dataset.wf===f));
+  renderWordCloud();
+}
+function renderWordCloud() {
+  const q = document.getElementById('wordSearch').value.toLowerCase();
+  let data;
+  if(wordFilter==='gap_fill')       data = D.gf.map(([w,c])=>({w,c,t:'gf'}));
+  else if(wordFilter==='word_formation') data = D.wf.map(([w,c])=>({w,c,t:'wf'}));
+  else if(wordFilter==='gap_fill_verbs') data = D.gfv.map(([w,c])=>({w,c,t:'v'}));
+  else data = [...D.gf.map(([w,c])=>({w,c,t:'gf'})),...D.wf.map(([w,c])=>({w,c,t:'wf'})),...D.gfv.map(([w,c,cat])=>({w,c,t:'v'}))].sort((a,b)=>b.c-a.c);
+  if(q) data = data.filter(d=>d.w.includes(q));
+  const maxC = data[0]?.c||1;
+  const colors = {gf:'#c0392b',wf:'#1a6b8a',v:'#1a7a4a'};
+  document.getElementById('wordCloud').innerHTML = data.map(({w,c,t})=>{
+    const r=c/maxC; const sz=(0.72+r*0.9).toFixed(2); const col=colors[t];
+    return `<span style="font-family:var(--mono);font-size:${sz}rem;padding:.18rem .5rem;border-radius:3px;border:1px solid ${col};color:${col};background:${col}14;cursor:default">${w}<sup style="font-size:.55em;opacity:.55">${c}×</sup></span>`;
+  }).join('');
+}
+renderWordCloud();
+
+// ─── GAP FILL QUIZ ────────────────────────────────────────────────────────────
+const gfQs = [
+  {s:"Scientists have known ___ years that sleep deprivation affects health.", ans:["for"], hint:"Trajanje → for/since"},
+  {s:"The policy was introduced ___ the government in 2018.", ans:["by"], hint:"Pasiv + agent → by"},
+  {s:"She refused to comment ___ the allegations.", ans:["on"], hint:"comment + preposition"},
+  {s:"It was ___ unusual discovery that changed everything.", ans:["an"], hint:"Člen pred 'unusual' (samoglasnik)"},
+  {s:"The town, ___ had been flooded twice, was finally rebuilt.", ans:["which"], hint:"Odnos na kraj/stvar + vejica"},
+  {s:"He left early ___ he could catch the last train.", ans:["so that","so"], hint:"Namen → so that"},
+];
+function buildGFQuiz() {
+  document.getElementById('gfQuiz').innerHTML = gfQs.map((q,i)=>{
+    const parts = q.s.split('___');
+    return `<div class="q-item">
+      <span>${parts[0]}</span>
+      <input class="q-blank" id="gfq${i}" autocomplete="off" spellcheck="false">
+      <span>${parts[1]}</span>
+      <span class="q-hint" onclick="document.getElementById('gfhint${i}').style.display='inline'">Namig</span>
+      <span id="gfhint${i}" style="display:none;font-family:var(--mono);font-size:.7rem;color:var(--gold)">${q.hint}</span>
+      <span class="q-ans" id="gfans${i}">✓ ${q.ans[0]}</span>
+    </div>`;
+  }).join('');
+}
+function checkGFQuiz() {
+  gfQs.forEach((q,i)=>{
+    const inp=document.getElementById('gfq'+i);
+    const ok=q.ans.some(a=>a.toLowerCase()===inp.value.trim().toLowerCase());
+    inp.className='q-blank '+(ok?'correct':'wrong');
+    document.getElementById('gfans'+i).style.display=ok?'none':'inline';
+  });
+}
+function resetGFQuiz() {
+  gfQs.forEach((_,i)=>{
+    const inp=document.getElementById('gfq'+i);
+    inp.value=''; inp.className='q-blank';
+    document.getElementById('gfans'+i).style.display='none';
+    document.getElementById('gfhint'+i).style.display='none';
+  });
+}
+buildGFQuiz();
+
+// ─── VERB QUIZ ────────────────────────────────────────────────────────────────
+const vQs = [
+  {s:"By the time she arrived, the meeting ___ (already finish).", ans:["had already finished","had finished"], hint:"Pred drugim preteklim → past perfect"},
+  {s:"The new law ___ (introduce) last year by the government.", ans:["was introduced"], hint:"Pasiv v preteklosti"},
+  {s:"She enjoys ___ (read) historical novels.", ans:["reading"], hint:"enjoy + gerund"},
+  {s:"The report claims that air quality ___ (improve) since 2015.", ans:["has improved","has been improving"], hint:"Since → present perfect"},
+  {s:"He ___ (study) for three hours when the power went off.", ans:["had been studying"], hint:"Pred preteklim dejanjem, trajanje → past perfect cont."},
+  {s:"The results ___ (still analyse) by the team.", ans:["are still being analysed","are still being analyzed"], hint:"Pasiv, present continuous"},
+];
+function buildVerbQuiz() {
+  document.getElementById('verbQuiz').innerHTML = vQs.map((q,i)=>{
+    const parts = q.s.split('___');
+    return `<div class="q-item">
+      <span>${parts[0]}</span>
+      <input class="q-blank" id="vq${i}" autocomplete="off" spellcheck="false" style="width:180px">
+      <span>${parts[1]}</span>
+      <span class="q-hint" onclick="document.getElementById('vhint${i}').style.display='inline'">Namig</span>
+      <span id="vhint${i}" style="display:none;font-family:var(--mono);font-size:.7rem;color:var(--gold)">${q.hint}</span>
+      <span class="q-ans" id="vans${i}">✓ ${q.ans[0]}</span>
+    </div>`;
+  }).join('');
+}
+function checkVerbQuiz() {
+  vQs.forEach((q,i)=>{
+    const inp=document.getElementById('vq'+i);
+    const ok=q.ans.some(a=>a.toLowerCase()===inp.value.trim().toLowerCase());
+    inp.className='q-blank '+(ok?'correct':'wrong');
+    document.getElementById('vans'+i).style.display=ok?'none':'inline';
+  });
+}
+function resetVerbQuiz() {
+  vQs.forEach((_,i)=>{
+    const inp=document.getElementById('vq'+i);
+    inp.value=''; inp.className='q-blank';
+    document.getElementById('vans'+i).style.display='none';
+    document.getElementById('vhint'+i).style.display='none';
+  });
+}
+buildVerbQuiz();
+
+// ─── WF QUIZ ──────────────────────────────────────────────────────────────────
+const wfQs = [
+  {s:"The charity focused on helping those living in ___ (POOR).", ans:["poverty","poorness"], hint:"POOR → samostalnik → poverty"},
+  {s:"Her ___ (IMPRESS) performance earned her a standing ovation.", ans:["impressive"], hint:"IMPRESS → pridevnik → -ive"},
+  {s:"The tribe was treated with ___ (BRUTAL) by the authorities.", ans:["brutality","brutalities"], hint:"BRUTAL → samostalnik → -ity"},
+  {s:"He was ___ (FAMILIAR) with the local customs.", ans:["unfamiliar"], hint:"Kontekst negativen → un- + FAMILIAR → adj"},
+  {s:"The policy had significant economic ___ (RESTRICT).", ans:["restrictions","restriction"], hint:"RESTRICT → samostalnik → -ion"},
+  {s:"Scientists ___ (PRIMARY) focused on climate data.", ans:["primarily"], hint:"PRIMARY → prislov → -ly"},
+];
+function buildWFQuiz() {
+  document.getElementById('wfQuiz').innerHTML = wfQs.map((q,i)=>{
+    const parts = q.s.split('___');
+    return `<div class="q-item">
+      <span>${parts[0]}</span>
+      <input class="q-blank" id="wq${i}" autocomplete="off" spellcheck="false">
+      <span>${parts[1]}</span>
+      <span class="q-hint" onclick="document.getElementById('whint${i}').style.display='inline'">Namig</span>
+      <span id="whint${i}" style="display:none;font-family:var(--mono);font-size:.7rem;color:var(--gold)">${q.hint}</span>
+      <span class="q-ans" id="wans${i}">✓ ${q.ans[0]}</span>
+    </div>`;
+  }).join('');
+}
+function checkWFQuiz() {
+  wfQs.forEach((q,i)=>{
+    const inp=document.getElementById('wq'+i);
+    const ok=q.ans.some(a=>a.toLowerCase()===inp.value.trim().toLowerCase());
+    inp.className='q-blank '+(ok?'correct':'wrong');
+    document.getElementById('wans'+i).style.display=ok?'none':'inline';
+  });
+}
+function resetWFQuiz() {
+  wfQs.forEach((_,i)=>{
+    const inp=document.getElementById('wq'+i);
+    inp.value=''; inp.className='q-blank';
+    document.getElementById('wans'+i).style.display='none';
+    document.getElementById('whint'+i).style.display='none';
+  });
+}
+buildWFQuiz();
+
+// ─── NAV ACTIVE ────────────────────────────────────────────────────────────────
+const sections = ['strategy','gapfill','verbs','wordform','besede'];
+const navLinks = document.querySelectorAll('.sitenav a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el && window.scrollY>=el.offsetTop-80) current=id;
+  });
+  navLinks.forEach(a=>{
+    a.classList.toggle('on', a.getAttribute('href')==='#'+current);
+  });
+},{passive:true});
+</script>
+</body>
+</html>
